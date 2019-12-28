@@ -1,0 +1,86 @@
+git init 
+create text file
+git status
+git add .
+git commit -m "initial commit"
+modify the file
+git status
+git add .
+git commit -m "second commit"
+git log --oneline --graph --decorate
+
+(These all done in Master file,Let's Create Branch FA & FB )
+------FA Branch------
+
+git branch FA master
+git checkout FA
+create FAfile1.txt
+git status
+git add .
+git commit -m "branch file initial commit"
+modify the file
+git status
+git add .
+git commit -m "branch file second commit"
+git log --oneline --graph --decorate
+git log
+
+
+------FB Branch------
+
+git branch FB master
+git checkout FB
+create FBfile1.txt
+git status
+git add .
+git commit -m "branch file initial commit"
+modify the file
+git status
+git add .
+git commit -m "branch file second commit"
+git log --oneline --graph --decorate
+git log
+
+(Then Checkout to master)
+git check out master
+
+git merge FB master
+(merginig is done by recursive merging)
+
+
+
+git log --oneline --graph --decorate
+git log
+
+-----THEN ADD ALL FILES FROM LOCAL REPO TO REMOTE REPO-----
+git add remote origin url
+
+git remote add origin https://github.com/sandeepbelur/Git.git
+
+NOTE : Create a repo in git hub account and take the url of the remote repo
+
+git remote -v
+origin  https://github.com/sandeepbelur/Git.git (fetch)
+origin  https://github.com/sandeepbelur/Git.git (push)
+
+git push -u origin --all
+(After PUSH operation below result will reflect on bash and files will moved to the remote repo)
+Enumerating objects: 20, done.
+Counting objects: 100% (20/20), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (20/20), 1.72 KiB | 65.00 KiB/s, done.
+Total 20 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/sandeepbelur/Git.git
+ * [new branch]      FA -> FA
+ * [new branch]      FB -> FB
+ * [new branch]      master -> master
+Branch 'FA' set up to track remote branch 'FA' from 'origin'.
+Branch 'FB' set up to track remote branch 'FB' from 'origin'.
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+git status
+(after pushing status will must show as below like Your branch is up to date with 'origin/master')
+On branch master
+Your branch is up to date with 'origin/master'.
